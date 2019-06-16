@@ -51,4 +51,5 @@ production:
   <<: *default
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  socket: /var/lib/mysql/mysql.
+  database: shinjo_production
