@@ -1,0 +1,31 @@
+.admin-page
+  .admin-edit
+    .rst-info
+      %h3.rst-info__header レストラン情報編集
+      .content
+        = form_with model: @restaurant, url:admin_restaurants_path(@restaurant), local: true do |f|
+          - if @restaurant.errors.any?
+            %h3 入力した内容にエラーがあります
+            -# %ul
+            -#   - @restaurant.errors.full_messgae.each do |message|
+            -#     %li= message
+                
+          %p= f.label :name, "レストラン名", class: "form-label"
+          %p= f.text_field :name, placeholder: "レストラン名", required: true
+
+          %p= f.label :budget_d, "予算（昼）", class: "form-label"
+          %p= f.select :budget_d, options_for_select(Restaurant.budget_ds_i18n.keys.to_a)
+
+          %p= f.label :budget_n, "予算（夜）", class: "form-label"
+          %p= f.select :budget_n, options_for_select(Restaurant.budget_ns_i18n.keys.to_a)
+
+          %p= f.label :header, "説明文の見出し", class: "form-label"
+          %p= f.text_field :header, placeholder: "説明文の見出し(100文字まで)", required: true
+
+          %p= f.label :description, "レストラン説明", class: "form-label"
+          %p= f.text_field :description, placeholder: "レストランの説明(2000文字まで)", required: true
+
+          %p= f.label :image, "レストランの画像", class: "form-label"
+          %p= f.text_field :image
+
+          %button= f.submit "編集する", class: "green-btn"

@@ -1,0 +1,48 @@
+// 管理者のレストラン一覧表示ページ、一般ユーザーのコメント投稿ページで共通
+// そのうち、一般ユーザーのコメント投稿ページは削除予定
+
+.comment-page, .admin-page{
+  .rst-info{
+    @include green-box;
+    &__header{
+      @include h2-green;
+    }
+    &__name{
+      @include h3-green;
+    }
+    .content{
+      display: flex;
+      &__image{
+        margin: 0 5px 5px 0;
+        width: 200px;
+      }
+      .budget{
+        display: flex;
+        margin:0 5px 5px 0;
+        *{
+          margin-left: 5px;
+        }
+      }
+      &__header{
+        @include h3-green;
+      }
+      .green-btn{
+        @include green-btn;
+      }
+  // index page ---------------------//
+      .index-page{
+        @include h2-green;
+      }
+  // new, edit-----------------------//
+      .form-label{
+        @include form-label;
+      }
+    }
+    &__bottom{
+      padding: 10px 10px 0 10px;
+      button{
+        @include green-btn;
+      }
+    }
+  }
+}

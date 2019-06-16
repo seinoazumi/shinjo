@@ -1,0 +1,93 @@
+.start-block{
+  &__left{
+    @include block-left;
+  }
+
+  &__right::before{
+    // @include vertical-line;
+    content: "";
+    display: block;
+    width:3px;
+    border-right: 20px solid $base-green;
+    position: relative;
+    left: -50px;
+    bottom: 0;
+    height: 100%;
+    top:0;
+    
+  }
+
+  &__start{
+    @include spot;
+  }
+
+  &__right{
+    @include block-right;
+  }
+  .start-message{
+    background-color: $base-yellow;
+    width: 90%;
+    height: 50vh;
+    margin: 30px 0 0 45px;
+    padding-right:30px;
+    border-radius: 5px;
+    position: relative;
+    
+    &__header{
+      font-size: 3em;
+      font-family: 'Pacifico', cursive;
+      line-height: 1.2em;
+      margin: 5px 10px;
+      position: relative;
+      left:-30px;
+      top:5px;
+      padding: 0.5em 0.5em 0.5em 30px;
+      background: $base-green;
+      color: $white;
+      span.small{
+        font-size: 22px;
+      }
+      &::before {
+        position: absolute;
+        content: '';
+        top: 100%;
+        left: 0;
+        border: none;
+        border-bottom: solid 15px transparent;
+        border-right: solid 20px rgb(149, 158, 155);
+      }
+    }
+    &__rules{
+      margin: 30px 0 0 30px; 
+      &__list{
+        font-size: 1em;
+        line-height: 1.2;
+        color: $gray;
+        margin: 15px 0 0 20px;
+        &::before {
+          @include font-awesome-base;
+          content: '\f00c';
+          color: $base-pink;
+        }
+      }
+    }
+    .charactor_box{
+      display: none;
+      .charactor{
+        display: flex;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        &__list{
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+.dice-inside-message::before{
+  @include font-awesome-base;
+  content: '\f522';
+  color: $base-green;
+  font-size: 2em;
+}

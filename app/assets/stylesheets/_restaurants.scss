@@ -1,0 +1,136 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurant-block{
+  .restaurant-block__left{
+    @include block-left;
+  }
+
+  .restaurant-block__right{
+  @include vertical-line;
+  height: 100%;
+  top: 0;
+  }
+
+  .restaurant-block__spot{
+    @include spot;
+  }
+
+  .restaurant-block__right{
+    @include block-right;
+  }
+
+  .rst-info {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0 1.5em 45px;
+    padding: 7px 10px;
+    width: 90%;
+    max-height: 30vh;
+    color: #555;
+    font-size: 16px;
+    background: $white;
+    box-sizing: border-box;
+    border-radius: 3px;
+    @include drop-shadow;
+    float: right;
+  }
+
+  .rst-info::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    margin-top: -12px;
+    border: 12px solid transparent;
+    border-right: 12px solid $white;
+    z-index: 2;
+  }
+
+  .rst-info::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -14px;
+    border: 14px solid transparent;
+    z-index: 1;
+  }
+
+
+  .rst-info__rst-name{
+    font-size:1.2em;
+    color: $base-pink;
+    margin-bottom: 5px; 
+    line-height: 1.2em;
+    clear:both;
+  }
+  .rst-info__bottom{
+    display: flex;
+  }
+
+  .rst-info__bottom__left{
+    width: 170px;
+    padding: auto;
+  }
+
+
+  .rst-info__rst-image{
+    width: 150px;
+    height: 130px;
+    border-radius: 5px; 
+    overflow: hidden;
+    position: relative;
+  }
+
+  .rst-info__rst-image img{
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .rst-info__bottom__right{
+    padding: 0 0 0 10px;
+  }
+  .rst-info__bottom__right__content{
+    height: 140px;
+    overflow: hidden;
+  }
+  .rst-info__right__budget__list{
+    display:inline-block;
+    font-size: 0.6em;
+    color: $gray;
+    margin: 0 0 5px 0;
+  }
+
+  .rst-info__rst-header{
+    margin: 0 0 5px 0; 
+  }
+
+  .rst-info__rst-detail{
+    font-size:0.8em;
+    color: $gray; 
+  }
+
+  .show-detail__btn{
+    font-size: 0.8em;
+    color: $base-green;
+    float: right;
+    line-height: 1em;
+    position: relative;
+    bottom: 0px;
+    right: 10px;
+
+    &::before{
+      content: ">>"
+    }
+
+    &:hover{
+      opacity: 0.4;
+    }
+  }
+}

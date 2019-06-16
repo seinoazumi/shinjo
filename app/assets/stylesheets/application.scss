@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:700');
+/* cssでフォントを指定するときはfont-family: 'M PLUS 1p', sans-serif; */
+@import './reset.scss';
+@import './colors.scss';
+@import './variables.scss';
+@import './all.scss';
+@import './layouts.scss';
+@import './header.scss';
+@import './start.scss';
+@import './restaurants.scss';
+@import './footer.scss';
+@import './dice.scss';
+@import './side-menu.scss';
+@import 'comments.scss';
+//-----------------------------管理者用
+@import 'admin/restaurant-info.scss';
+@import 'admin/layout.scss';

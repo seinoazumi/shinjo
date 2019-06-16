@@ -1,0 +1,26 @@
+= form_with(model: restaurant, local: true) do |form|
+  - if restaurant.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(restaurant.errors.count, "error")
+        prohibited this restaurant from being saved:
+      %ul
+        - restaurant.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :budget_d
+    = form.text_field :budget_d
+  .field
+    = form.label :budget_n
+    = form.text_field :budget_n
+  .field
+    = form.label :info
+    = form.text_field :info
+  .field
+    = form.label :comment
+    = form.text_area :comment
+  .actions
+    = form.submit

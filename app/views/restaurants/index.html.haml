@@ -1,0 +1,82 @@
+.wrapper
+  .left-column
+    %header.header
+      %h1.header__title シンジョースゴロク
+      - if user_signed_in?
+        - if current_user.admin?
+          %p.admin-info 管理者としてログインしています
+      %ul.header__user-menu
+        - if user_signed_in?
+          %li.header__user-menu__btn
+            = link_to 'Sign out', destroy_user_session_path, method: :delete
+
+        - else
+          %li.header__user-menu__btn
+            = link_to 'Sign up', new_user_registration_path, method: :get
+          %li.header__user-menu__btn
+            = link_to 'Sign in', new_user_session_path, method: :get
+          
+    %main.contents
+      .dice
+        .dice__info
+
+      .start-block.clearfix
+        .start-block__left
+          .start-block__start START
+        .start-block__right
+          #charactor
+            = image_tag 'dad-boy.png'
+          .start-message
+            %h2.start-message__header
+              START
+              %span.small
+                あそび方
+            %ul.start-message__rules
+              %li.start-message__rules__list.dice-icon
+                下の
+                %span.dice-inside-message
+                サイコロボタンをクリックしてスタート！
+              %li.start-message__rules__list
+                止まったお店でご飯を食べよう♪
+              %li.start-message__rules__list
+                おいしかったらコメントを残してね！（要サインイン）
+            
+            .charactor_box
+              %ul.charactor
+                %li.charactor__list=image_tag "charactor_01.png", width: "100", alt: "キャラクター"
+                %li.charactor__list=image_tag "charactor_02.png", width: "100", alt: "キャラクター"
+                %li.charactor__list=image_tag "charactor_03.png", width: "100", alt: "キャラクター"
+      
+      = render 'game-block'
+
+      .start-block.clearfix
+        .start-block__left
+          .start-block__start GOAL
+        .start-block__right
+      
+    %footer.footer
+      #footer__dice-btn
+        %p.fas.fa-dice
+
+  %aside.side-menu
+    .rst-info
+      %h3.rst-info__title 店舗情報
+      %figure=image_tag "http://placehold.jp/220x200.png", size: "220x200"
+      -# %h3.restaurant_name=@restaurants.name
+      %h4.rst-info__header レストラン名
+      %h4.rst-info__header 店舗説明
+      %h4.rst-info__header みんなのレビュー
+      .review
+        %p.review__rate
+        %ul
+          %li.review__post ここに口コミが入ります
+          %li.review__post ここに口コミが入ります
+          %li.review__post ここに口コミが入ります
+        
+        %p.review__notice
+          ログインするとレビューを投稿できます
+    - if user_signed_in?
+      -if current_user.admin?
+        %ul.admin-btn
+          %li.admin-btn__list
+            = link_to "レストラン情報を投稿する", new_admin_restaurant_path

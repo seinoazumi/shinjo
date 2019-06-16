@@ -1,0 +1,58 @@
+//all -----------------------------------------------//
+html {
+  box-sizing: border-box;
+  *,*:before,*:after {
+    box-sizing: inherit;
+  }
+}
+
+*,*:before,*:after{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  color: #333;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+a{
+  text-decoration: none;
+  &:link{
+    color: inherit;
+  }
+  &:hover{
+    color: inherit;
+  }
+  &:visited{
+    color: inherit;
+  }
+}
+
+li{
+  text-decoration: none;
+}
+
+#charactor {
+  z-index: 3;
+  position: fixed;
+  top: 35vh;
+  left: 5%;
+}
+
+.icon-day::before{
+  @include font-awesome-base;
+  content: '\f185';
+  color: orange;
+  font-size: 1em;
+}
+.icon-night::before{
+  @include font-awesome-base;
+  content: '\f186';
+  color: rgb(21, 21, 190);
+  font-size: 1em;
+}

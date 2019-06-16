@@ -1,0 +1,70 @@
+@mixin column-layout {
+  width: 100%;
+  min-width: 300px;
+  
+}
+.wrapper{
+  display: flex;
+  background-color: $base-yellow;
+
+  .side-menu{
+    width: 400px;
+    padding:40px 30px;
+    display: none;
+  }
+
+  .left-column{
+    .header{
+      @include column-layout;
+      padding: 15px 40px;
+      height: 90px;
+      background-color: $base-pink;
+    }
+
+    .start-block{
+      @include column-layout;
+      height: 60vh;
+      background-image: linear-gradient(90deg, rgba(255,252,230,0.9), rgba(96,193,192,0.6)), image_url("photo_01.jpg");
+      background-size:cover;
+    }
+
+    .restaurant-block{
+      @include column-layout;
+      height: 35vh;
+      background-image: linear-gradient(90deg, rgba(255,252,230,0.9), rgba(96,193,192,0.6)), image_url("photo_02.jpg");
+      background-size:cover;
+    }
+
+    .footer{
+      @include column-layout;
+      height: 90px;
+      background-color: $base-green;
+      position:fixed;
+      bottom: 0px;
+      text-align: center;
+      z-index: 3;
+    }
+  }
+}
+
+@media screen and(min-width: 1068px){
+  .wrapper{
+    .side-menu{
+      display: block;
+    }
+    .footer{
+      width: calc(100% - 360px) !important;
+    }
+  }
+}
+
+@media screen and(min-width: 690px){
+  .wrapper{
+    .charactor_box{
+      display: block !important;
+      img{
+        width:80px;
+      }
+    }
+  }
+}

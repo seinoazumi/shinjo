@@ -1,0 +1,46 @@
+.dice{
+  width: 65%;
+  height: 50vh;
+  background-color: $t-gray;
+  border: 1px solid $white;
+  box-shadow: 0px 0px 0px 15px $t-gray;
+  border-radius:15px;
+  position: fixed;
+  top: 200vh;
+  left:15%;
+  z-index: 3;
+  text-align: center;
+  padding-top: 5%;
+  &__info{
+    p{
+    color: $white;
+    font-size: 30px;
+    line-height: 1em;
+    font-weight: 300;
+    margin-top: 30px;
+    }
+
+    &__invisible{
+      display: none;
+    }
+    &__img{
+      width: 100%;
+      height: 250px;
+    }
+    .dice__img{
+      margin: 30px;
+    }
+    .number{
+      font-size: 100px;
+      font-weight: 900;
+    }
+  }
+}
+
+
+
+.dice__info__number{
+  font-size: 3em;
+  line-height: 1em;
+  font-weight: bold;
+}

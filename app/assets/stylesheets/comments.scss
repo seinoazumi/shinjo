@@ -1,0 +1,80 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$starFull: 16px;
+$starHalf: $starFull / 2;
+
+$rate1: $starHalf;
+$rate2: $starFull;
+$rate3: $starFull + $starHalf;
+$rate4: $starFull * 2;
+$rate3: $rate2 + $starHalf;
+$rate4: $rate2 * 2;
+$rate5: $rate4 + $starHalf;
+$rate6: $rate3 * 2;
+$rate7: $rate6 + $starHalf;
+$rate8: $rate4 * 2;
+$rate9: $rate8 + $starHalf;
+$rate10: $rate5 * 2;
+
+@mixin after{
+  color: #ffa500;
+  overflow: hidden;
+  white-space: nowrap;//これがないと改行されて星の半分（0.5）が表現できなくなる
+}
+.rate{
+  position: relative;
+  display: inline-block;
+  width: $starFull * 5;
+  height: $starFull;
+  font-size: $starFull;
+  &:before, &:after{
+    @include font-awesome-base;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '\f005\f005\f005\f005\f005';
+    display: inline-block;
+    height: $starFull;
+    line-height: $starFull;
+  }
+  &:before{
+    color: #ddd;
+    }
+  &:after{
+    color: #ffa500;
+    overflow: hidden;
+    white-space: nowrap;//これがないと改行されて星の半分（0.5）が表現できなくなる
+    }
+  }
+.rate0:after{
+  width: 0;
+}
+.rate1:after{
+  width: $rate1;
+  @include after;
+}
+.rate2:after{
+  width: $rate2;
+}
+.rate3:after{
+  width: $rate3;
+}
+.rate4:after{
+  width: $rate4;
+}
+.rate5:after{
+  width: $rate5;
+}
+.rate6:after{
+  width: $rate6;
+}
+.rate7:after{
+  width: $rate7;
+}
+.rate8:after{
+  width: $rate8;
+}
+.rate9:after{
+  width: $rate9;
+}    

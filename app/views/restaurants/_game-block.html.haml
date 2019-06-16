@@ -1,0 +1,27 @@
+- @restaurants.each do |restaurant|
+  .restaurant-block.clearfix
+    .restaurant-block__left
+      .restaurant-block__spot
+    .restaurant-block__right
+      .rst-info
+        %h3.rst-info__rst-name
+          = restaurant.name
+            
+        .rst-info__bottom
+          .rst-info__bottom__left
+            %p.rst-info__rst-image 
+              = image_tag restaurant.image, alt: "レストランの写真"
+          
+          .rst-info__bottom__right
+            .rst-info__bottom__right__content
+              %ul.rst-info__right__budget
+              %li.rst-info__right__budget__list.day-budget
+                = restaurant.budget_d
+              %li.rst-info__right__budget__list.night-budget
+                = restaurant.budget_n
+              %h4.rst-info__rst-header
+                = restaurant.description
+              %p.rst-info__rst-detail
+                = restaurant.description
+            .show-detail__btn
+              = link_to "詳細を見る", new_restaurant_comment_path(restaurant.id)

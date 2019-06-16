@@ -1,0 +1,39 @@
+.comment-page
+  .rst-info
+    %h2.rst-info__header
+      = @restaurant.name
+    .content.clearfix
+      = image_tag @restaurant.image , class: "content__image", alt: "レストランの写真"
+
+      .content__right
+        %ul.budget
+          %li.budget__list.day-budget= @restaurant.budget_d_i18n
+          %li.budget__list.night-budget= @restaurant.budget_n_i18n
+
+        %h3.content__header
+          = @restaurant.header
+        %p.content__description
+          = @restaurant.description
+    
+    .comments
+      %h3.comments__header.h3-header  ユーザーのコメント
+      - if @comments.present?
+        - @comments[-5..-1].each do |comment|
+          %p= "投稿者：#{comment.user.username}"
+          %p 評価：
+          %span{class: "rate rate#{comment.rate}"}
+
+          %p= "コメント：#{comment.comment}"
+
+      - if user_signed_in?
+        .comments__form-content
+          %h3.comments__form-content-header.h3-header  コメントを残す
+          .comments__form-content__left
+          .comments__form-content__left
+            %p.comments__username
+              = "ユーザー名：#{current_user.username}"
+          = form_for [@restaurant, @comment] do |f|
+            %p= f.number_field :rate, placeholder: "評価", min: 1, max:10, html: {class: "rate"}
+            %p= f.label :comment, 'コメント'
+            %p= f.text_area :comment
+            %p= f.submit "投稿する"

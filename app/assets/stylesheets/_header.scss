@@ -1,0 +1,32 @@
+.header{
+  color: $white;
+  position: relative;
+  &__title{
+    font-family: 'M PLUS 1p', sans-serif;
+    font-size: 3em;
+    color: $white;
+    float: left;
+  }
+  .admin-info{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+  }
+  &__user-menu{
+    display: flex;
+    float:right;
+    margin: 5px 5px 0 0;
+  }
+
+  &__user-menu__btn{
+    width: 100px;
+    height: 50px;
+    color: $white;
+    line-height: 30px;
+    font-size: 1.2em;
+    border: solid 2px $white;
+    border-radius: 3px;
+    margin-right: 5px;
+    text-align: center;
+  }
+}
