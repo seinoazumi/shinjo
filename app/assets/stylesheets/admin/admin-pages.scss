@@ -3,8 +3,8 @@
 
 .comment-page, .admin-page{
   .top-box{
-    width: 90%;
-    margin: 30px auto;
+    width: $green-box-width;
+    margin: $admin-page-margin;
     .header{
       color: $base-green;
       font-size: 2em;

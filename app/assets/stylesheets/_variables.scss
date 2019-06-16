@@ -3,6 +3,7 @@ $green-border: 3px solid $base-green;
 $green-dot-border: 2px dotted $base-green;
 $green-box-width: 90%;
 $green-box-padding: 20px;
+$admin-page-margin: 30px auto;
 
 // mixin----------------------//
 // start-----------------//
@@ -73,8 +74,9 @@ $green-box-padding: 20px;
 @mixin green-box{
   border: $green-border;
   width: $green-box-width;
+  max-width:700px;
   min-height: 300px;
-  margin: 30px auto;
+  margin: $admin-page-margin;
   padding: $green-box-padding;
 }
 
