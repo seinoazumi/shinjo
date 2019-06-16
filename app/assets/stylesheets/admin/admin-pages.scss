@@ -2,6 +2,22 @@
 // そのうち、一般ユーザーのコメント投稿ページは削除予定
 
 .comment-page, .admin-page{
+  .top-box{
+    width: 90%;
+    margin: 30px auto;
+    .header{
+      color: $base-green;
+      font-size: 2em;
+      margin-bottom:20px;
+      text-align: center;
+    }
+    button{
+      @include btn-reset;
+      .green-btn{
+        @include green-btn;
+      }
+    }
+  }//end.top-box
   .rst-info{
     @include green-box;
     &__header{
@@ -26,18 +42,37 @@
       &__header{
         @include h3-green;
       }
-      .green-btn{
-        @include green-btn;
-      }
+    }//end.content
+
+    .single-content{
   // index page ---------------------//
       .index-page{
         @include h2-green;
       }
   // new, edit-----------------------//
-      .form-label{
-        @include form-label;
+      .form{
+        padding: $green-box-padding;
+        .form-label{
+          @include form-label;
+        }
+        .input-box{
+          @include input-box;
+        }
+        .select-box{
+          @include select-box;
+        }
+        .button{
+          margin-top:20px;
+          button{
+            @include btn-reset;
+            .green-btn{
+            @include green-btn;
+            }
+          }
+        }
       }
-    }
+    } //end.single-content
+
     &__bottom{
       padding: 10px 10px 0 10px;
       button{

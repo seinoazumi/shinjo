@@ -1,5 +1,6 @@
 .admin-page
-  .admin-index
-    %h1.header レストラン一覧
-    .admin-rst-info
-      = render 'admin/restaurants/restaurant-info'
+  .top-box
+    %h2.header レストラン一覧
+    %button=link_to "レストラン情報新規投稿", new_admin_restaurant_path, class: "green-btn" 
+  .admin-rst-info
+    = render 'admin/restaurants/restaurant-info'
