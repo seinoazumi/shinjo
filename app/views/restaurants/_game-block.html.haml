@@ -14,11 +14,16 @@
           
           .rst-info__bottom__right
             .rst-info__bottom__right__content
+              - if restaurant.comments.any?
+                %p 評価：
+                %span{class: "rate rate#{restaurant.average_rate}"} 
+              - else
+                %p 評価：なし
               %ul.rst-info__right__budget
               %li.rst-info__right__budget__list.day-budget
-                = restaurant.budget_d
+                = restaurant.budget_d_i18n
               %li.rst-info__right__budget__list.night-budget
-                = restaurant.budget_n
+                = restaurant.budget_n_i18n
               %h4.rst-info__rst-header
                 = restaurant.description
               %p.rst-info__rst-detail

@@ -1,6 +1,10 @@
 class Restaurant < ApplicationRecord
   has_many :comments
 
+  def average_rate
+    self.comments.average(:rate).round
+  end
+
   with_options presence: true do
     validates :name
     validates :budget_d
