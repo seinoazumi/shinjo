@@ -52,7 +52,7 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   database: shinjo_production
-
+  socket: /var/www/shinjo/bin/rails
 # production: オリジナルはこちら
 #   <<: *default
 #   database: shinjo_production
