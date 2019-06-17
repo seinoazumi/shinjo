@@ -24,9 +24,10 @@
             %p= f.text_field :header, placeholder: "説明文の見出し(100文字まで)", required: true, class: "input-box"
 
             %p= f.label :description, "レストラン説明", class: "form-label"
-            %p= f.text_field :description, placeholder: "レストランの説明(2000文字まで)", required: true, class: "input-box"
+            %p= f.text_area :description, placeholder: "レストランの説明(2000文字まで)", required: true, class: "input-area"
 
             %p= f.label :image, "レストランの画像", class: "form-label"
             %p= f.text_field :image, class: "input-box"
             .button
               %button= f.submit "編集する", class: "green-btn"
+              %button= link_to "レストラン一覧へ戻る", admin_restaurants_path, class: "white-btn"

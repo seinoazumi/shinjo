@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :restaurants, only: [:index, :new, :create, :show,  :edit, :destroy]
+    resources :restaurants, only: [:index, :new, :create, :edit, :destroy]
   end
 end

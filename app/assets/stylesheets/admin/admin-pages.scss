@@ -2,8 +2,10 @@
 // そのうち、一般ユーザーのコメント投稿ページは削除予定
 
 .comment-page, .admin-page{
+  // 共通------------------------------------//
   .top-box{
     width: $green-box-width;
+    max-width: 700px;
     margin: $admin-page-margin;
     .header{
       color: $base-green;
@@ -11,13 +13,23 @@
       margin-bottom:20px;
       text-align: center;
     }
-    button{
-      @include btn-reset;
-      .green-btn{
-        @include green-btn;
-      }
-    }
   }//end.top-box
+
+  button{
+    @include btn-reset;
+    margin-top: 20px;
+    width: 100%;
+
+    .green-btn{
+      @include green-btn;
+    }
+    .white-btn{
+      @include white-btn;
+    }  
+  } //end.button
+
+  // greenの四角の中（全ページ共通）--------------------//
+
   .rst-info{
     @include green-box;
     &__header{
@@ -26,7 +38,16 @@
     &__name{
       @include h3-green;
     }
-    .content{
+    &__bottom{
+      padding: 10px 10px 0 10px;
+      display: flex;
+    }
+    .only-index-page{
+      @include h2-green;
+    }
+  
+  //green-boxの中が2カラムの場合（index, show）-------------
+    .content{ 
       display: flex;
       &__image{
         margin: 0 5px 5px 0;
@@ -44,39 +65,25 @@
       }
     }//end.content
 
-    .single-content{
-  // index page ---------------------//
-      .index-page{
-        @include h2-green;
-      }
-  // new, edit-----------------------//
+  //green-boxの中が1カラムの場合（edit, new）-------------
+    .single-content{ 
       .form{
         padding: $green-box-padding;
         .form-label{
           @include form-label;
         }
-        .input-box{
+        .input-box, .input-area{
           @include input-box;
+        }
+        .input-area{
+          height: 200px;
         }
         .select-box{
           @include select-box;
         }
         .button{
           margin-top:20px;
-          button{
-            @include btn-reset;
-            .green-btn{
-            @include green-btn;
-            }
-          }
         }
-      }
-    } //end.single-content
-
-    &__bottom{
-      padding: 10px 10px 0 10px;
-      button{
-        @include green-btn;
       }
     }
   }

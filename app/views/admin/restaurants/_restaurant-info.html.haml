@@ -1,6 +1,6 @@
 - @restaurants.each do |restaurant|
   .rst-info
-    %h3.rst-info__name.index-page
+    %h3.rst-info__name.only-index-page
       = restaurant.name  
     .content
       .content-l
@@ -17,4 +17,5 @@
         .content__detail
           %p= restaurant.description
     .rst-info__bottom
-      %button= link_to "このレストランの情報を編集する", edit_admin_restaurant_path(restaurant.id)
+      %button= link_to "編集する", edit_admin_restaurant_path(restaurant.id), class: "green-btn"
+      %button= link_to "削除する", admin_restaurant_path(restaurant.id), method: :delete, class: "white-btn"

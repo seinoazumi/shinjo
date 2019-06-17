@@ -109,18 +109,38 @@ $admin-page-margin: 30px auto;
   @include form-reset;
   border:none;
   width:100%;
+  a {
+    display: block;
+  }
 }
-@mixin green-btn{
+
+@mixin btn-default{
   @include btn-reset;
   border: solid 1px $base-green;
-  color: $white;
   padding: 10px 20px;
-  background-color: $base-green;
+  margin: 0 5px;
   font-weight: 500;
   font-size: 20px;
   border-radius: 3px;
+  width: 100%;
+}
+
+@mixin green-btn{
+  @include btn-default;
+  color: $white;
+  background-color: $base-green;
   &:hover{
     opacity: 0.8;
+  }
+}
+
+@mixin white-btn{
+  @include btn-default;
+  background-color: $white;
+  color:$base-green;
+  border: solid 1px $base-green;
+  &:hover{
+    background-color: rgba(96, 193, 192, 0.2);
   }
 }
 

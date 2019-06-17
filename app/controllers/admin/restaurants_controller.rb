@@ -1,7 +1,7 @@
 class Admin::RestaurantsController < ApplicationController
   before_action :authenticate_user!
   before_action :if_not_admin
-  before_action :set_restaurant, only: [:show, :edit, :destroy]
+  before_action :set_restaurant, only: [:edit, :destroy]
 
   def index
     @restaurants = Restaurant.all
@@ -20,13 +20,15 @@ class Admin::RestaurantsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
   end
 
   def destroy
+    if @restaurant.destroy
+      redirect_to root_path
+    else
+      render admin_restaurants_path
+    end
   end
 
   private
