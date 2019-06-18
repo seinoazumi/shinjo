@@ -15,10 +15,10 @@
             %p= f.text_field :name, placeholder: "レストラン名", required: true, class: "input-box"
 
             %p= f.label :budget_d, "予算（昼）", class: "form-label"
-            %p= f.select :budget_d, options_for_select(Restaurant.budget_ds_i18n.keys.to_a), {}, {class: "select-box"}
+            %p= f.select :budget_d, Restaurant.budget_ds_i18n.keys.map{|k| [I18n.t("enums.restaurant.budget_d.#{k}"), k]}, {}, {class: "select-box"}
 
             %p= f.label :budget_n, "予算（夜）", class: "form-label"
-            %p= f.select :budget_n, options_for_select(Restaurant.budget_ns_i18n.keys.to_a), {}, {class: "select-box"}
+            %p= f.select :budget_n, Restaurant.budget_ns_i18n.keys.map{|k| [I18n.t("enums.restaurant.budget_d.#{k}"), k]}, {}, {class: "select-box"}
 
             %p= f.label :header, "説明文の見出し", class: "form-label"
             %p= f.text_field :header, placeholder: "説明文の見出し(100文字まで)", required: true, class: "input-box"
