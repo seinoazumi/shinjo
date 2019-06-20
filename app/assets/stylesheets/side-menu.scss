@@ -1,8 +1,49 @@
 .side-menu{
+  min-width: 320px;
   .rst-info{
+    max-width:280px;
+    position:fixed;
+    top:30px;
+    right: 20px;
+
     &__title, &__header{
       font-size: 1.4em;
       color: $base-green;
+    }
+    .content{
+      &__image{
+        width: 100%;
+        border-radius:5px;
+      }
+      &__header{
+        font-size: 1.1em;
+        color: $base-green;
+        margin-top: 5px; 
+      }
+      .budget{
+        display: flex;
+      }
+      .comments{
+        margin-top:10px; 
+        &__header{
+          font-size: 1.4em;
+          color: $base-green;
+        }
+        .btn{
+          button{
+            @include btn-reset;
+            .see_comment_btn{
+              @include green-btn;
+            }
+          }
+        }
+      }
+    }
+    .admin-btn{
+      a{
+        @include green-btn;
+        font-size:14px;
+      }
     }
   }
 }
