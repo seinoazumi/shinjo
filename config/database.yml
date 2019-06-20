@@ -49,10 +49,10 @@ test:
 #
 production:
   <<: *default
+  database: shinjo_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  database: shinjo_production
-  socket: /var/www/shinjo/bin/rails
+  socket: /var/lib/mysql/mysql.sock
 # production: オリジナルはこちら
 #   <<: *default
 #   database: shinjo_production
