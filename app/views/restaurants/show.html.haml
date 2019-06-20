@@ -1,0 +1,26 @@
+%h2.rst-info__header
+  = @restaurant.name
+.content
+  = image_tag @restaurant.image , class: "content__image", alt: "レストランの写真"
+
+  %h3.content__header 予算
+  %ul.budget
+    %li.budget__list.icon-day= @restaurant.budget_d_i18n
+    %li.budget__list.icon-night= @restaurant.budget_n_i18n
+
+  %h3.content__header
+    = @restaurant.header
+  %p.content__description
+    = @restaurant.description
+  
+  .comments
+    %h3.comments__header.h3-header  ユーザーのコメント
+    - if @comments.present?
+      - @comments.each do |comment|
+        %p= "投稿者：#{comment.user.username}"
+        %p 評価：
+        %span{class: "rate rate#{comment.rate}"}
+
+        %p= "コメント：#{comment.comment}"
+    .btn
+      %button= link_to "コメントを見る", new_restaurant_comment_path(params[:id]), class: "see_comment_btn"

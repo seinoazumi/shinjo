@@ -5,10 +5,10 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-  end
-
-  def edit
-    @restaurant = Restaurant.find(params[:id])
+    @comments = @restaurant.comments.includes(:user)
+    # respond_to do |format|
+    #   format.html{redirect_to root_path)}
+    # end
   end
 
   private
