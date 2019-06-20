@@ -7,6 +7,9 @@
           %p.admin-info 管理者としてログインしています
       %ul.header__user-menu
         - if user_signed_in?
+          -if current_user.avatar.attached?
+            %li.header__user-menu__btn
+              =image_tag current_user.avatar, alt: "ユーザーのアバター", size: "40x40", class: "user_avatar" 
           %li.header__user-menu__btn
             = link_to 'Sign out', destroy_user_session_path, method: :delete
 
