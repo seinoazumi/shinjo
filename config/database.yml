@@ -15,7 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  # socket: /tmp/mysql.sock
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -50,12 +50,10 @@ test:
 production:
   <<: *default
   database: shinjo_production
-  username: postgres
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  socket: /var/lib/mysql/mysql.sock
+
 # production: オリジナルはこちら
 #   <<: *default
 #   database: shinjo_production
